@@ -1,0 +1,16 @@
+.image-sm {
+    height: 150px;
+    width: 150px;
+}
+
+.red-border {
+    border: 2px solid red;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
