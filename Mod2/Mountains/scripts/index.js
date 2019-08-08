@@ -65,20 +65,23 @@ $(document).ready(function() {
 
                 switch (k) {
                     case "img":
-                        cell.innerHTML = "IMAGE" + ": ";
+                        cell.innerHTML = "IMAGE: ";
                         tr.appendChild(cell);
-
                         cell = tr.insertCell(1);
                         cell.innerHTML = data[0][k];
-
                         break;
+                    case "coords":
+                        cell.innerHTML = "Coordinates: ";
+                        tr.appendChild(cell);
+                        cell = tr.insertCell(1);
+                        cell.innerHTML = "Lattitude : " + data[0][k].lat + ", Longitude: " + data[0][k].lng;
+                        break;
+
                     default:
                         cell.innerHTML = k.toUpperCase() + ": ";
                         tr.appendChild(cell);
-
                         cell = tr.insertCell(1);
                         cell.innerHTML = data[0][k];
-
                 };
                 tr.appendChild(cell);
             });
@@ -102,7 +105,8 @@ $(document).ready(function() {
         function refreshTbody() {
             //tbody.innerHTML = "";
             tMountain.innerHTML = "";
-            items = items = getMountainInfo(mountainDropdown.value);
+            items = getMountainInfo(mountainDropdown.value);
+            //addToTbody(tbody, items)
             displayInTable(tMountain, items);
         }
         /** to add the rows and columms of tbody with data
